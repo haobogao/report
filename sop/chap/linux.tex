@@ -1,0 +1,96 @@
+\chapter{Linux}
+
+
+
+
+\chapter{系统调用}
+
+
+
+
+
+
+
+
+\chapter{reboot}
+
+
+kernel\_restart
+
+
+\begin{lstlisting}
+void kernel_restart(char *cmd)
+{
+	kernel_restart_prepare(cmd);
+	migrate_to_reboot_cpu();
+	syscore_shutdown();
+	if (!cmd)
+		pr_emerg("Restarting system\n");
+	else
+		pr_emerg("Restarting system with command '%s'\n", cmd);
+	kmsg_dump(KMSG_DUMP_RESTART);
+	machine_restart(cmd);
+}
+\end{lstlisting}
+
+
+\begin{lstlisting}
+arch\arm64\kernel\process.c
+void machine_restart(char *cmd)
+{
+	/* Disable interrupts first */
+	local_irq_disable();
+	smp_send_stop();
+
+	/* Now call the architecture specific reboot code. */
+	if (arm_pm_restart)
+		arm_pm_restart(reboot_mode, cmd);
+	else
+		do_kernel_restart(cmd);
+
+	/*
+	 * Whoops - the architecture was unable to reboot.
+	 */
+	printk("Reboot failed -- System halted\n");
+	while (1);
+} 
+
+\end{lstlisting}
+
+在msm-poweroff.c 中的msm\_restart\_probe函数中，指定了
+
+\begin{lstlisting}
+pm_power_off = do_msm_poweroff;
+arm_pm_restart = do_msm_restart;
+\end{lstlisting}
+
+
+do\_msm\_restart
+
+msm\_restart\_prepare
+
+
+
+
+\chapter{Linux systemcall }
+
+\begin{lstlisting}
+#define __NR_fsetxattr 7
+__SYSCALL(__NR_fsetxattr, sys_fsetxattr)
+#define __NR_getxattr 8
+__SYSCALL(__NR_getxattr, sys_getxattr)
+#define __NR_lgetxattr 9
+__SYSCALL(__NR_lgetxattr, sys_lgetxattr)
+#define __NR_fgetxattr 10
+__SYSCALL(__NR_fgetxattr, sys_fgetxattr)
+#define __NR_listxattr 11
+\end{\lstlisting}
+在 unistd.h 中定义了系统调用映射关系 ，然后填充 sys\_call\_table：
+\begin{\lstlisting}
+void * const sys_call_table[__NR_syscalls] __aligned(4096) = {
+	[0 ... __NR_syscalls - 1] = sys_ni_syscall,
+#include <asm/unistd.h>
+};
+\end{lstlisting}
+
+

@@ -1,0 +1,116 @@
+%!TEX program = xelatex
+% Font Size:
+%   10pt, 11pt, 12pt
+% Paper Size:
+%   a4paper, letterpaper, a5paper, leagalpaper, executivepaper, landscape
+% Font Family:
+%   roman, sans
+\documentclass[12pt, a4paper, roman]{moderncv}
+
+% Style:
+%   casual, classic, oldstyle, banking
+\moderncvstyle{classic}
+% Color:
+%   blue, orange, green, red, purple, grey
+\moderncvcolor{purple}
+% \nopagenumbers{}
+% \definecolor{color0}{rgb}{0, 0, 0}
+% \definecolor{color1}{RGB}{245, 90, 7}
+% \definecolor{color2}{RGB}{39, 40, 34}
+
+% Font specify
+\usepackage[UTF8, scheme = plain, heading = false]{ctex}
+
+% Page layout
+\usepackage{geometry}
+\geometry{scale = 0.75}
+%\setlength{\hintscolumnwidth}{4cm}           % 如果你希望改变日期栏的宽度
+\AtBeginDocument{\settowidth{\hintscolumnwidth}{2014 年 -- 2018 年}}
+
+\AtBeginDocument{\hypersetup{pdfstartview = FitH}}
+
+% Packages
+\usepackage{metalogo}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\providecommand{\CTeX}{\relax}
+\renewcommand{\CTeX}{\ensuremath{\mathbb{C}}\TeX}
+\usepackage{paralist}
+\setmainfont{Ubuntu}
+
+% Self-info
+\name{高}{浩博}
+\title{个人简历}
+\address{紫荆山南路南三环}{郑州}
+\email{goal.haobo@gmail.com}
+\phone[mobile]{+86~17729734085}
+% \phone[fixed]{+2~(345)~678~901}
+% \phone[fax]{+3~(456)~789~012}
+\homepage{www.vample.info}
+\homepage{github.com/haobogao/}
+% \extrainfo{附加信息 (可选项)}
+% \photo[<height>][<width-of-frame>]{<file-name>}
+% \photo[64pt][0.4pt]{picture}
+% Motto
+% \quote{}
+
+% 显示索引号;仅用于在简历中使用了引言
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% 分类索引
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+
+\begin{document}
+\maketitle
+
+\section{教育背景}
+\cventry{2014 年 -- 2018 年}{理学学士}{河南科技大学}{}{\textit{信息工程系/软件工程}}{核心课程：数据结构，算法设计，计算机组成原理,数字电路，操作系统原理，C,C++，C\#....}
+
+ \section{毕业论文}
+ \cvitem{题目}{\emph{基于 zigbee CC2530的多点数据采集系统}}
+ \cvitem{导师}{杨继松博士}
+% \cvitem{说明}{\small 论文简介}
+
+
+\section{计算机技能}
+%\cvdoubleitem{C/C++}{熟悉，曾在老师指导下为同级同学讲课}{Cuda C}{熟悉，曾开发基于 GPU 的高性能大数计算库}
+
+\cvitem{C \& C like}{熟悉C 语言，有大量的C 语言开发经验。了解C++,C\#,在校期间有C++的扑克牌课程设计，毕业后有C\# 串口上位机的
+开发经历}
+\cvitem{Linux operate system}{熟悉ubuntu 环境的配置和搭建，如samba,ssh,vim,NFS,opengrok，crosstools,以及shadowsocks,wordpress...}
+\cvitem{Script}{会使用shell script 方便自己的工作，可以看懂python}
+\cvitem{Document}{不希望被强迫使用MS Office 系列的文档工具，而是喜欢 markdown,\LaTeX 这样的工具整理技术文档}
+\cvitem{Git}{熟悉git 和 repo}
+\cvitem{Tools}{熟悉GNU 的 gcc ,makefile,linker,了解elf 文件格式,有使用makefile+shell script 管理自己的项目.}
+\cvitem{Embed} {熟悉 单片机软件开发，熟悉linux 应用编程，熟悉linux 驱动编程，熟悉uboot,了解lk,uefi}
+
+\section{外语技能}
+ \cvitemwithcomment{中文}{母语}{}
+\cvitemwithcomment{英语}{熟练}{CET-4}
+\cvitemwithcomment{日语}{简单对话}{年轻时爱看日漫的缘故}
+
+\section{实践背景}
+
+\subsection{stm32 显示屏控制器}
+
+\subsection{uwb室内定位}
+
+\subsection{cc2530 zigbee}
+
+\subsection{cc2640 蓝牙}
+
+\subsection{高通平台}
+
+\subsection{海思Hi3516 }
+
+\subsection{linux kernel & driver 学习}
+
+
+
+
+
+\end{document} 
