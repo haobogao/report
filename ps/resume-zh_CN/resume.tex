@@ -5,7 +5,7 @@
 %   a4paper, letterpaper, a5paper, leagalpaper, executivepaper, landscape
 % Font Family:
 %   roman, sans
-\documentclass[12pt, a4paper, roman]{moderncv}
+\documentclass[11pt, a4paper, roman]{moderncv}
 
 % Style:
 %   casual, classic, oldstyle, banking
@@ -83,7 +83,7 @@
 开发经历}
 \cvitem{Linux operate system}{熟悉ubuntu 环境的配置和搭建，如samba,ssh,vim,NFS,opengrok，crosstools,以及shadowsocks,wordpress...}
 \cvitem{Script}{会使用shell script 方便自己的工作，可以看懂python}
-\cvitem{Document}{不希望被强迫使用MS Office 系列的文档工具，而是喜欢 markdown,\LaTeX 这样的工具整理技术文档}
+\cvitem{Document}{喜欢 markdown,\LaTeX 这样的工具整理技术文档}
 \cvitem{Git}{熟悉git 和 repo}
 \cvitem{Tools}{熟悉GNU 的 gcc ,makefile,linker,了解elf 文件格式,有使用makefile+shell script 管理自己的项目.}
 \cvitem{Embed} {熟悉 单片机软件开发，熟悉linux 应用编程，熟悉linux 驱动编程，熟悉uboot,了解lk,uefi}
@@ -95,22 +95,43 @@
 
 \section{实践背景}
 
-\subsection{stm32 显示屏控制器}
-
-\subsection{uwb室内定位}
-
-\subsection{cc2530 zigbee}
-
-\subsection{cc2640 蓝牙}
-
-\subsection{高通平台}
-
-\subsection{海思Hi3516 }
-
-\subsection{linux kernel & driver 学习}
+\cventry{河南科技大学恒生杯全国服务机器人大赛}{负责syn6288 语音模块, 超声波测距的实现，舵机调试}{}{}{}{大赛中我们小组完成了 智能家居机器人的研发。平台使用 stm32f407.外设有 摄像头，温湿度传感器
+，雨滴检测模块，红外避障，机械臂，扫地机器人改装来的移动底盘，语音模块，超声波测距模块。
+}
 
 
+\cventry{linux kernel \& driver 学习}{linux 驱动}{}{}{}{本人在大三开始就对linux 技术十分感兴趣，从s3c2440 开始，投入大量的时间和精力在
+自学嵌入式linux 方向的东西。 在2440上实现过 一些简单的字符设备驱动，如led,key，input，platform,了解 linux 驱动和内核的基本概念(通读过ldd3 和 深入理解linux 内核)。
+}
+ 
+\cventry{stm32 显示屏控制器}{code 优化}{}{}{}{实习期间在郑州汉威光电股份有限公司负责LED 可变情报板的研发和维护。 
+\begin{compactitem}
+	\item 我优化了SD卡播放表的存储方式， 修复了SD卡中不知原因的数据丢失问题。 
+	\item 整合了大部分难以维护的代码，封装接口，添加注释，进行测试。
+	\item  引入了linux kernel 链表 使memory 动态分配管理，替代了原来无处不在的大数组，缓解了内存紧张的问题。后续又
+使用链表加面向对象的思想实现了安徽治超站插播播放表。
+	\item 另外在这份工作期间尝试了 freeRTOS,和 RT-thread 等其他的RTOS 方案，也尝试了LWIP 的移植和使用。
+\end{compactitem}
+}
 
+\cventry{uwb室内定位}{评估}{}{}{}{在foxconn 郑州中心参与了 uwb 室内定位的方案评估。
+期间主要的工作有：
+\begin{compactitem}
+	\item 对芯片的选型 向硬件的同事提出建议。
+	\item 参与demo 的搭建，期间写了个linux 下的app,用于把串口接收到的数据向服务器上报。
+	\item 在demo 的源码下，实现了shutdown 和 sleep ，协助硬件评估功耗。
+	\item 了解了一些uwb 定位的原理，和代码实现。
+\end{compactitem}}
 
+\cventry{cc2530 zigbee}{设计}{}{}{}{基于 Ti  CC2530 完成了毕业设计，和汉威光电雾区诱导系统的研发尝试。
+主要实现了 一些外设和传感器的驱动，和一些应用逻辑。}
 
-\end{document} 
+\cventry{cc2640 蓝牙}{评估}{}{}{}{在富士康郑州研发中心，参与了室内定位 蓝牙方案的评估，实现了CC2640的低功耗，以及led,key 驱动。
+了解了 TiOS 的 机制。}
+
+\cventry{高通平台}{BSP}{}{}{}{在富士康郑州研发中心，作为 BSP boot 的owner ，负责 新案子的bring up. 以及boot 阶段的debug 。 
+协助 FTM 的owner 出工厂测试版本。具体工作内容设计保密协议，不便更详细的展开。}
+
+\cventry{海思Hi3516 }{BSP}{}{}{}{Hi3516 的bring up .uboot 网卡驱动的优化，ssh 的移植。}
+
+\end{document}  
