@@ -1,0 +1,127 @@
+\documentclass[10pt]{beamer}
+\usepackage{listings}
+\usetheme{uha}
+\usepackage{xeCJK}
+\usepackage[french,english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{tikz}
+\setmainfont{Ubuntu}
+\title{主标题 报告模板}
+\subtitle{子标题}
+\date{\today}
+\author{高浩博 haobo.gao}
+\institute{组织 河南科技大学}
+
+\lstset{
+	numbers=left,
+	numberstyle=\tiny,
+	basicstyle=\scriptsize,
+	backgroundcolor= \color{gray},
+	keywordstyle=\color{blue!70},
+	breaklines=true,
+	breakautoindent=true,
+	breakindent=4em,
+	commentstyle=\color{codegreen},
+	frame=shadowbox,
+	escapeinside=``,
+	tabsize=4,
+	framextopmargin=1pt,framexbottommargin=1pt,abovecaptionskip=-1pt,belowcaptionskip=1pt,
+  xleftmargin=3em,xrightmargin=3em,
+	language=C
+}
+
+
+\begin{document}
+
+
+
+
+% Title page 标题页
+\begin{frame}[plain, noframenumbering]
+	\titlepage
+\end{frame}
+
+
+
+%=============================================================================================
+\section{章节 Introduction}
+
+%------------------------------------------------
+\begin{frame}[fragile]{页头文字}
+
+	内容 以下的内容是一个插入引用的 例子
+
+	\begin{verbatim}
+int main(void);
+	\end{verbatim}
+\end{frame}
+
+%--------------------------------------------
+\begin{frame}[fragile]{Section}
+这个是一个listing 演示：
+\begin{lstlisting}
+int main(void);
+\end{lstlisting}
+\end{frame}
+
+%========================================================================================================
+\section{第一章}
+
+%-----------------------------------------------
+\begin{frame}[fragile]{Typographie}
+\begin{lstlisting}
+ 前面不能有空格？
+\end{lstlisting}
+
+item：
+\begin{itemize}
+\item 1
+\item 2
+\item 3
+\end{itemize}
+
+\end{frame}
+
+
+%-----------------------------------------------
+\begin{frame}{Les listes}
+	item
+	\begin{itemize}
+		\item Premier
+		\item Second
+		\item Troisième
+	\end{itemize}
+
+	枚举
+	\begin{enumerate}
+		\item Premier
+		\item Second
+		\item Troisième
+	\end{enumerate}
+
+	描述
+	\begin{description}
+		\item [UHA] Université de Haute Alsace
+	\end{description}
+\end{frame}
+
+%-----------------------------------------------
+\begin{frame}{Les blocks}
+	\begin{exampleblock}{示例一}
+		示例
+	\end{exampleblock}
+	\begin{alertblock}{提醒}
+		提醒
+	\end{alertblock}
+	\begin{block}{普通}
+		普通
+	\end{block}
+\end{frame}
+
+
+
+\end{document}
